@@ -1,0 +1,7 @@
+node_modules/
+dist/
+public/gdal/
+*.local
+.env
+.env.*
+.DS_Store

@@ -1,0 +1,27 @@
+{
+  "name": "gis-converter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "In-browser GIS file converter (Shapefile, KML, GeoJSON, CSV, GPX, GeoPackage) with reprojection and a map preview, built on gdal3.js. Nothing is uploaded.",
+  "license": "MIT",
+  "author": "Abdeldjalil Chougui",
+  "type": "module",
+  "scripts": {
+    "gdal-assets": "node scripts/copy-gdal.mjs",
+    "dev": "node scripts/copy-gdal.mjs && vite",
+    "build": "node scripts/copy-gdal.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "gdal3.js": "2.8.1",
+    "maplibre-gl": "5.24.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
