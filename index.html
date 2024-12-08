@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ccircle cx=%278%27 cy=%278%27 r=%277%27 fill=%27%232a7fdb%27/%3E%3C/svg%3E">
+  <title>GIS Converter</title>
+</head>
+<body>
+  <aside>
+    <h1>GIS Converter</h1>
+    <p class="muted">Shapefile · KML · GeoJSON · CSV · GPX · GeoPackage. Runs GDAL in your browser: <strong>nothing is uploaded</strong>.</p>
+    <label id="drop" class="drop">
+      <input id="file" type="file" multiple hidden accept=".zip,.shp,.shx,.dbf,.prj,.cpg,.kml,.kmz,.geojson,.json,.csv,.tsv,.txt,.gpx,.gpkg" />
+      <span>Drop files here or <u>browse</u><br /><small>(a .zip shapefile, or select .shp + .dbf + .shx + .prj together)</small></span>
+    </label>
+    <div id="info" class="info"></div>
+    <fieldset id="opts" disabled>
+      <label>Output format <select id="format"></select></label>
+      <label>Target CRS
+        <input id="target" list="srs" placeholder="keep (or EPSG:4326, 32631, +proj=…)" />
+      </label>
+      <label>Source CRS override
+        <input id="source" list="srs" placeholder="from the file" />
+      </label>
+      <datalist id="srs"></datalist>
+      <label id="csvxy" hidden><input type="checkbox" id="xy" /> write X/Y columns instead of WKT (points only)</label>
+      <button id="convert" class="primary">Convert &amp; download</button>
+    </fieldset>
+    <p id="status" class="muted" role="status"></p>
+  </aside>
+  <div id="map"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
